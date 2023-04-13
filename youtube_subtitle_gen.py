@@ -1,12 +1,14 @@
-# import streamlit as st
+# file name youtube_subtitle_gen.py
 import openai
 import tempfile
 import numpy as np
 import pandas as pd
 from pytube import YouTube, Search
 import os
+from dotenv import load_dotenv
+load_dotenv()
 
-openai.api_key = ""
+openai.api_key = os.getenv("openai_key")
 
 video_dict = {
     "url": [],

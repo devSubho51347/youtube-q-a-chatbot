@@ -1,8 +1,9 @@
 import pinecone
 import pandas as pd
 import openai
+import os
 
-pinecone.init(api_key="", environment="us-east-1-aws")
+pinecone.init(api_key=os.getenv("pinecone_key"), environment="us-east-1-aws")
 
 index = pinecone.Index("demo-youtube-app")
 print(index.describe_index_stats())
